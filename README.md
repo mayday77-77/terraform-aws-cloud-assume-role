@@ -39,6 +39,10 @@ EOF}
   # Using external_id https://aws.amazon.com/blogs/apn/securely-using-external-id-for-accessing-aws-accounts-owned-by-others/
   external_id = "some_external_id"
 
+  # Checks the source IPs when assuming the role
+  # Note: Restricting assume role to WARP/SEED IPs only blocks initial the assume role process, not the later use of the temporary credentials if stolen. 
+  # A permissions boundary with a deny on all actions using NotIpAddress could be added to mitigate this.
+  source_ip_addresses = ["ip_1","ip_2"]
   # Will not create if empty, if need custom policy, use the EOF syntax
   custom_policy = ""
 
