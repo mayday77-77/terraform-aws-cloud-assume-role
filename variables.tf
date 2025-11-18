@@ -64,3 +64,9 @@ variable "managed_policies" {
   type        = map(string)
   default     = {}
 }
+
+variable "source_ip_addresses" {
+  description = "Only allow assume role coming from specific IPs, this rule is disabled if the list is empty."
+  type        = list(string)
+  default     = []
+}

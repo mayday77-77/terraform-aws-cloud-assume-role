@@ -75,18 +75,20 @@ No modules.
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_agency_assume_local_role_id"></a> [agency\_assume\_local\_role\_id](#input\_agency\_assume\_local\_role\_id) | your agency\_assume\_local role\_id, use `aws iam list-roles --query "Roles[?starts_with(RoleName, 'AWSReservedSSO_agency_assume_local')].[RoleId]" --output text` | `string` | n/a | yes |
-| <a name="input_attach_policies"></a> [attach\_policies](#input\_attach\_policies) | map(string) of existing policies to attach | `map(string)` | `{}` | no |
-| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | aws region | `string` | n/a | yes |
-| <a name="input_custom_policy"></a> [custom\_policy](#input\_custom\_policy) | custom policy to be applied to role using the EOF syntax | `string` | `""` | no |
-| <a name="input_description"></a> [description](#input\_description) | description of the role | `string` | n/a | yes |
-| <a name="input_external_id"></a> [external\_id](#input\_external\_id) | external id condition for assume role | `string` | `""` | no |
-| <a name="input_max_session_duration"></a> [max\_session\_duration](#input\_max\_session\_duration) | maximum duration in seconds for role, between 1 to 12 hours | `number` | `3600` | no |
-| <a name="input_name"></a> [name](#input\_name) | name of the role in aws console | `string` | n/a | yes |
-| <a name="input_path"></a> [path](#input\_path) | path of the role in aws console | `string` | `"/"` | no |
-| <a name="input_techpass_email_addresses"></a> [techpass\_email\_addresses](#input\_techpass\_email\_addresses) | list of TechPass users' email addresses to allow use of this role | `list(string)` | `[]` | no |
+| Name                                                                                                                        | Description                                                                                                                                                        | Type           | Default | Required |
+|-----------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|---------|:--------:|
+| <a name="input_agency_assume_local_role_id"></a> [agency\_assume\_local\_role\_id](#input\_agency\_assume\_local\_role\_id) | your agency\_assume\_local role\_id, use `aws iam list-roles --query "Roles[?starts_with(RoleName, 'AWSReservedSSO_agency_assume_local')].[RoleId]" --output text` | `string`       | n/a     |   yes    |
+| <a name="input_attach_policies"></a> [attach\_policies](#input\_attach\_policies)                                           | map(string) of existing policies to attach                                                                                                                         | `map(string)`  | `{}`    |    no    |
+| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region)                                                          | aws region                                                                                                                                                         | `string`       | n/a     |   yes    |
+| <a name="input_custom_policy"></a> [custom\_policy](#input\_custom\_policy)                                                 | custom policy to be applied to role using the EOF syntax                                                                                                           | `string`       | `""`    |    no    |
+| <a name="input_description"></a> [description](#input\_description)                                                         | description of the role                                                                                                                                            | `string`       | n/a     |   yes    |
+| <a name="input_external_id"></a> [external\_id](#input\_external\_id)                                                       | external id condition for assume role                                                                                                                              | `string`       | `""`    |    no    |
+| <a name="input_max_session_duration"></a> [max\_session\_duration](#input\_max\_session\_duration)                          | maximum duration in seconds for role, between 1 to 12 hours                                                                                                        | `number`       | `3600`  |    no    |
+| <a name="input_name"></a> [name](#input\_name)                                                                              | name of the role in aws console                                                                                                                                    | `string`       | n/a     |   yes    |
+| <a name="input_path"></a> [path](#input\_path)                                                                              | path of the role in aws console                                                                                                                                    | `string`       | `"/"`   |    no    |
+| <a name="input_techpass_email_addresses"></a> [techpass\_email\_addresses](#input\_techpass\_email\_addresses)              | list of TechPass users' email addresses to allow use of this role                                                                                                  | `list(string)` | `[]`    |    no    |
+| <a name="input_source_ip_addresses"></a> [source\_ip\_addresses](#input\_source\_ip\_addresses)                             | list of Source IP addresses to allow use of this role                                                                                                              | `list(string)` | `[]`    |    no    |
+
 
 ## Outputs
 
